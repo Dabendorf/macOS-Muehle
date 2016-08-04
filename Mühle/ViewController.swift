@@ -9,7 +9,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    private var mill = Mill(pl1isKI: false, pl2isKI: true, name1: "Spieler", name2: "KI")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,4 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
 }
-
