@@ -10,27 +10,23 @@ import Foundation
 
 class Player {
     let num : Int
-    let isKI : Bool
     let name : String
-    let ki : KI?
+    let type : PlayersType
     
     var stoneDepot = 9
     var stonesOnField = 0
-    var couldJump: Bool {
+    var couldJump: Bool {/*Variable, die sich beim Aufruf selbst aktualisiert*/
         return stonesOnField == 3 && stoneDepot == 0 ? true : false
     }
     
-    init(isKI: Bool, name: String, num: Int) {
+    init(name: String, num: Int, type: PlayersType) {
         self.num = num
-        self.isKI = isKI
         self.name = name
-        
-        ki = isKI ? KI() : nil
+        self.type = type
     }
-    
-    func setStone() {
-        if stoneDepot > 0 {
-            
-        }
-    }
+}
+
+enum PlayersType {
+    case Player
+    case KI
 }
