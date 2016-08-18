@@ -12,18 +12,19 @@ class Mill {
     var players = [Player]()
     var board = Board()
     var playersTurn = 1
+    var moves = [Move]()
     
     init(pl1isKI: Bool, pl2isKI: Bool, name1: String, name2: String) {
         if pl1isKI {
-            players.append(Player(name: name1, num: 1, type: .Player))
+            players.append(Human(name: name1, num: 1))
         } else {
-            players.append(Player(name: name1, num: 1, type: .KI))
+            players.append(KI(name: name1, num: 1))
         }
         
         if pl2isKI {
-            players.append(Player(name: name2, num: 2, type: .Player))
+            players.append(Human(name: name2, num: 2))
         } else {
-            players.append(Player(name: name1, num: 1, type: .KI))
+            players.append(KI(name: name1, num: 1))
         }
     }
     
@@ -39,7 +40,7 @@ class Mill {
         
         if correctTurn {
             changePlayersNum()
-            if players[playersTurn].type == PlayersType.KI {
+            if players[playersTurn] is KI {
                 //Do KI Turn, wie auch immer
             }
         }

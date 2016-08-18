@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Move {
+/*class Move {
     let possibleTurns : [(Int, Int, Int, Int)] = [(0,0,1,0), (0,0,0,3), (1,0,0,0), (1,0,2,0), (1,0,1,1)] //viele weitere, die ich noch ergaenze, wenn es nicht sinnvollere Ideen gibt!
     
     func setStone(player: Player, field: [[Int]], location: (Int, Int)) -> Bool {//Returns correctness
@@ -31,5 +31,17 @@ class Move {
         let (c1, c2, c3, c4) = v
         for (v1, v2, v3, v4) in a { if v1 == c1 && v2 == c2 && v3 == c3 && v4 == c4 { return true } }
         return false
+    }
+ 
+ //WO auch immer das hin kommt
+}*/
+
+class Move {
+    var oldPosition : (Int, Int)
+    var newPosition : (Int, Int)
+    
+    init(oldPosition : (Int, Int), newPosition : (Int, Int)) {
+        self.oldPosition = oldPosition
+        self.newPosition = newPosition
     }
 }
