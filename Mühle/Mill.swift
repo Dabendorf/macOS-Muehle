@@ -28,8 +28,8 @@ class Mill {
         }
     }
     
-    func move() {
-        let player = players[playersTurn]
+    func move() -> Bool {
+        let player = players[playersTurn-1]
         let correctTurn : Bool = true
         if player.stoneDepot > 0 {
             //die setStone Methode auf ein Objekt von Move aufrufen
@@ -40,10 +40,12 @@ class Mill {
         
         if correctTurn {
             changePlayersNum()
-            if players[playersTurn] is KI {
+            if players[playersTurn-1] is KI {
                 //Do KI Turn, wie auch immer
             }
         }
+        
+        return true
     }
     
     func changePlayersNum() {
